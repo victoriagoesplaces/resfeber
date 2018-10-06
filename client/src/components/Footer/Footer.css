@@ -1,4 +1,4 @@
-/* flexbox to structure for sticky footer */
+/* flexbox to structure for sticky footer
 body {
     display: flex;
     min-height: 100vh;
@@ -7,7 +7,7 @@ body {
 
   main {
     flex: 1 0 auto;
-  }
+  } */
       
 .page-footer {
     background-color: #487B9C;
