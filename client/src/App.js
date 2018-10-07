@@ -20,7 +20,7 @@ class App extends Component {
           authenticated: true,
           currentUser: user,
           loading: false
-        });
+        }); 
       } else {
         this.setState({
           authenticated: false,
@@ -42,7 +42,7 @@ class App extends Component {
         <div>
           <Route exact path="/" component={Landing} />
           <Route exact path="/about" component={About} />
-          {/* <Route exact path="/dashboard" component={Dashboard} /> */}
+          <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/login" component={LogIn} />
           <Route exact path="/signup" component={SignUp} />
           {/* <Route component={Landing} /> */}

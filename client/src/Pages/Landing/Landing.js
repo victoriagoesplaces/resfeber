@@ -4,7 +4,9 @@ import Navbar from "../../components/Navbar";
 class Landing extends Component {
     render() {
         return (
-        <Navbar/>
+            <div>
+                <Navbar/>
+            </div>
      )}
 }
 
