@@ -179,7 +179,7 @@ app.get("/clearall", function(req, res) {
   });
 });
 
-// Listen on port 3000
-app.listen(3000, function() {
-  console.log("App running on port 3000!");
+// Listen on port 3001
+app.listen(3001, function() {
+  console.log("App running on port 3001!");
 });
