@@ -46,12 +46,12 @@ class App extends Component {
           <Route exact path="/login" component={LogIn} />
           <Route exact path="/signup" component={SignUp} />
           {/* <Route component={Landing} /> */}
-          <PrivateRoute
+          {/* <PrivateRoute
             exact
             path="/dashboard"
             component={Dashboard}
             authenticated={authenticated}
-          />
+          /> */}
         </div>
       </Router>
 

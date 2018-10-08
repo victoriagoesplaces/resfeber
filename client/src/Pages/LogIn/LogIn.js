@@ -8,26 +8,26 @@ const LogIn = ({ onSubmit }) => {
                 <form className="col s12 loginForm" onSubmit={onSubmit}>
                     <div className="row">
                         <div className="input-field col s12 l6">
-                            {/* <input
+                            <input
                                 className="validate"
                                 name="email"
                                 htmlFor="email"
                                 type="text"
-                            /> */}
-                            {/* <label htmlFor="email">Email</label> */}
+                            />
+                            <label htmlFor="email">Email</label>
                         </div>
                     </div>
                     <div className="row">
-                        {/* <div className="input-field col s12 l6">
+                        <div className="input-field col s12 l6">
                             <input
                                 className="validate"
                                 htmlFor="password"
                                 name="password"
                                 type="password"
-                            /> */}
-                            {/* <label htmlFor="password">Password</label> */}
+                            />
+                            <label htmlFor="password">Password</label>
                         </div>
-                    {/* </div> */}
+                    </div>
                     <div>
                         <button className="form-submit button">SIGN IN</button>
                     </div>
