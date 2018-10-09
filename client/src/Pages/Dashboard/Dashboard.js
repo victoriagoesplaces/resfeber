@@ -12,7 +12,7 @@ class Dashboard extends Component {
             <div>
                 <Navbar />
                 <div>
-                    <Col m={8} >
+                    <Col m={6} >
                         <Card className='small'
                             header={<CardTitle image='./images/worldMap.png'>Card Title</CardTitle>}
                             actions={[<a href='/dashboard'>This is a Link</a>]}>

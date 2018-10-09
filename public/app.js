@@ -2,7 +2,7 @@
 function getResults() {
   // Empty any results currently on the page
   $("#results").empty();
-  // Grab all of the current notes
+  // Grab all of the current activities
   $.getJSON("/all", function(data) {
     // For each note...
     for (var i = 0; i < data.length; i++) {
@@ -49,7 +49,7 @@ $(document).on("click", "#make-new", function() {
 
 // When the #clear-all button is pressed
 $("#clear-all").on("click", function() {
-  // Make an AJAX GET request to delete the notes from the db
+  // Make an AJAX GET request to delete the activities from the db
   $.ajax({
     type: "GET",
     dataType: "json",
