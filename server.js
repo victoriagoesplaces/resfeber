@@ -3,8 +3,12 @@ var express = require("express");
 var mongojs = require("mongojs");
 var bodyParser = require("body-parser");
 var logger = require("morgan");
+const mongoose = require("mongoose");
 
 var app = express();
+const PORT = process.env.PORT || 3001;
+
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/resfeber");
 
 // Set the app up with morgan.
 // morgan is used to log our HTTP Requests. By setting morgan to 'dev'
@@ -178,6 +182,11 @@ app.get("/clearall", function(req, res) {
     }
   });
 });
+
+// Serve up static assets (usually on heroku)
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 
 // Listen on port 3001
 app.listen(3001, function() {
