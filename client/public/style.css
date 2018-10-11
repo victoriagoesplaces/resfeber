@@ -1,3 +1,15 @@
 .wallpaper {
-    background-image: url("./images/worldMap.png");
-  }
+  background-image: url("./images/worldMap.png");
+}
+
+.wallpaper {
+  display: block;
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.65;
+  position: fixed;
+}
