@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from "../../components/Button";
 
 
 const LogIn = ({ onSubmit }) => {
@@ -28,11 +29,13 @@ const LogIn = ({ onSubmit }) => {
                             <label htmlFor="password">Password</label>
                         </div>
                     </div>
+                  
+                    {/* <button className="form-submit button btn">SIGN IN</button> */}
                     <div>
-                        <button className="form-submit button">SIGN IN</button>
+                    <Button>Sign In</Button>
                     </div>
                 </form>
-                <a className="needAccount" href="/signup">Don't have an account? Sign Up</a>
+                {/* <a className="needAccount" href="/signup">Sign Up</a> */}
             </div>
         </div>
     );

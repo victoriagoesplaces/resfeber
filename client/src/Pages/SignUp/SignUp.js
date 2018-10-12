@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../../components/Button";
 
 const SignUp = ({ onSubmit }) => {
     return (
@@ -26,10 +27,11 @@ const SignUp = ({ onSubmit }) => {
                         </div>
                     </div>
                     <div>
-                        <button className="form-submit button">SIGN UP</button>
+                        {/* <button className="form-submit button">SIGN UP</button> */}
+                        <Button>Sign Up</Button>
                     </div>
                 </form>
-                <a className="existingAccount" href="/login">Already have an account? Login</a>
+                {/* <a className="existingAccount" href="/login">Already have an account? Login</a> */}
             </div>
         </div>
     );
