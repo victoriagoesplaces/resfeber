@@ -7,7 +7,7 @@
 //     location: { type: String, required: true },
 //     title:{ type: String, required: true },
 //     note: string,
-//     price: number,
+//     price: interger,
 //     url: string,
 // });
 

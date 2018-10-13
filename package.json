@@ -26,13 +26,14 @@
     "nodemon": "^1.18.4"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "if-env": "^1.0.4",
+    "mongodb": "^3.1.1",
     "mongojs": "^2.3.0",
     "mongoose": "^5.3.2",
-    "morgan": "^1.7.0",
-    "mongodb": "^3.1.1"
+    "morgan": "^1.7.0"
   }
 }

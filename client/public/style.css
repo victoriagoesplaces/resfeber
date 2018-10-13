@@ -1,3 +1,7 @@
+body{
+  font-family: 'Prata', serif;
+}
+
 .wallpaper {
   background-image: url("./images/worldMap.png");
 }
@@ -12,4 +16,9 @@
   background-size: cover;
   opacity: 0.65;
   position: fixed;
+}
+
+.input-field>label {
+  color: #1E3656 ;
+  font-size: 1.4rem;
 }

@@ -11,10 +11,7 @@ const PORT = process.env.PORT || 3001;
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/resfeber");
 
 // Set the app up with morgan.
-// morgan is used to log our HTTP Requests. By setting morgan to 'dev'
-// the :status token will be colored red for server error codes,
-// yellow for client error codes, cyan for redirection codes,
-// and uncolored for all other codes.
+// morgan is used to log our HTTP Requests. 
 app.use(logger("dev"));
 // Setup the app with body-parser and a static folder
 app.use(
@@ -38,6 +35,9 @@ db.on("error", function(error) {
 
 // Routes
 // ======
+// app.get('/express_backend', (req, res) => {
+//   res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' });
+// });
 
 // Simple index route
 app.get("/", function(req, res) {
@@ -184,11 +184,9 @@ app.get("/clearall", function(req, res) {
 });
 
 // Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
+// if (process.env.NODE_ENV === "production") {
+//   app.use(express.static("client/build"));
+// }
 
 // Listen on port 3001
-app.listen(3001, function() {
-  console.log("App running on port 3001!");
-});
+app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
