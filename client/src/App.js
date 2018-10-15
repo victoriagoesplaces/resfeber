@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import About from "./Pages/About";
-import Dashboard from "./Pages/Dashboard";
+import Activities from "./Pages/Activities";
 import Landing from "./Pages/Landing";
 import LogIn from "./Pages/LogIn";
 import SignUp from "./Pages/SignUp";
@@ -60,17 +60,17 @@ class App extends Component {
         <div>
           <Route exact path="/" component={Landing} />
           <Route exact path="/about" component={About} />
-          {/* <Route exact path="/dashboard" component={Dashboard} /> */}
+          {/* <Route exact path="/Activities" component={Activities} /> */}
           <Route exact path="/login" component={LogIn} />
           <Route exact path="/signup" component={SignUp} />
           {/* <Route component={Landing} /> */}
-          {/* <Route exact path="/activities" component={Dashboard} />
+          {/* <Route exact path="/activities" component={Activities} />
           <Route exact path="/activities/:id" component={Detail} /> */}
 
           <PrivateRoute
             exact
             path="/activities"
-            component={Dashboard}
+            component={Activities}
             authenticated={authenticated}
           />
           {/* <PrivateRoute

@@ -9,7 +9,7 @@ import Navbar from "../../components/Navbar";
 import Button from "../../components/Button";
 
 
-class Dashboard extends Component {
+class Activities extends Component {
     state = {
         activities: [],
         title: "",
@@ -66,7 +66,7 @@ class Dashboard extends Component {
                     <div className="col s6" >
                         <Card className='extralarge'>
                             {/* header={<CardTitle image='./images/worldMap.png'>Card Title</CardTitle>} */}
-                            {/* actions={[<a href='/dashboard'>This is a Link</a>]}> */}
+                            {/* actions={[<a href='/Activities'>This is a Link</a>]}> */}
                             <Row>
                                 <h4 className="center">Add new activity</h4>
                               
@@ -119,7 +119,7 @@ class Dashboard extends Component {
                                 <h4 className="center">My activities </h4>
                                 <div id="results"></div>
                                 {/* header={<CardTitle image='./images/worldMap.png'>Card Title</CardTitle>} */}
-                                {/* actions={[<a href='/dashboard'>This is a Link</a>]}> */}
+                                {/* actions={[<a href='/Activities'>This is a Link</a>]}> */}
                             </Row>
                         </Card>
                     </div>
@@ -129,4 +129,4 @@ class Dashboard extends Component {
     }
 }
 
-export default Dashboard;
+export default Activities;

@@ -11,7 +11,7 @@ class LogInContainer extends Component {
       const user = await app
         .auth()
         .signInWithEmailAndPassword(email.value, password.value);
-      this.props.history.push("/dashboard");
+      this.props.history.push("/Activities");
     } catch (error) {
       alert(error);
     }
