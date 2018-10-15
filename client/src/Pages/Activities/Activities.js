@@ -116,11 +116,30 @@ class Activities extends Component {
                     <div className="col s6" >
                         <Card className='extralarge'>
                             <Row>
-                                <h4 className="center">My activities </h4>
-                                <div id="results"></div>
+                                {/* <h4 className="center">My activities </h4>
+                                <div id="results"></div> */}
                                 {/* header={<CardTitle image='./images/worldMap.png'>Card Title</CardTitle>} */}
                                 {/* actions={[<a href='/Activities'>This is a Link</a>]}> */}
+                            
+                                {this.state.activities.length ? (
+              <Row>
+                {this.state.activities.map(activity => (
+                  <div key={activity._id}>
+                    <div to={"/activities/" + activity._id}>
+                      <strong>
+                        {activity.title} in {activity.location}
+                      </strong>
+                    </div>
+                    <Button onClick={() => this.deleteActivity(activity._id)} />
+                  </div>
+                ))}
+              </Row>
+            ) : (
+              <h3>No Results to Display</h3>
+            )}
+                            
                             </Row>
+
                         </Card>
                     </div>
                 </div>
