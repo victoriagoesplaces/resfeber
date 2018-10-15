@@ -1,192 +1,220 @@
-// Dependencies
-var express = require("express");
-var mongojs = require("mongojs");
-var bodyParser = require("body-parser");
-var logger = require("morgan");
-const mongoose = require("mongoose");
+const express = require("express");
 
-var app = express();
+const mongoose = require("mongoose");
+const routes = require("./routes");
+const app = express();
 const PORT = process.env.PORT || 3001;
 
+// Define middleware here
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+// Serve up static assets (usually on heroku)
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
+// Add routes, both API and view
+app.use(routes);
+
+// Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/resfeber");
 
-// Set the app up with morgan.
-// morgan is used to log our HTTP Requests. 
-app.use(logger("dev"));
-// Setup the app with body-parser and a static folder
-app.use(
-  bodyParser.urlencoded({
-    extended: false
-  })
-);
-app.use(express.static("public"));
-
-// Database configuration
-var databaseUrl = "activitylist";
-var collections = ["activities"];
-
-// Hook mongojs config to db variable
-var db = mongojs(databaseUrl, collections);
-
-// Log any mongojs errors to console
-db.on("error", function(error) {
-  console.log("Database Error:", error);
+// Start the API server
+app.listen(PORT, function() {
+  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
 
-// Routes
-// ======
-// app.get('/express_backend', (req, res) => {
-//   res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' });
+
+
+
+// // Dependencies
+// var express = require("express");
+// var mongojs = require("mongojs");
+// var bodyParser = require("body-parser");
+// var logger = require("morgan");
+// const mongoose = require("mongoose");
+
+// var app = express();
+// const PORT = process.env.PORT || 3001;
+
+// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/resfeber");
+
+// // Set the app up with morgan.
+// // morgan is used to log our HTTP Requests. 
+// app.use(logger("dev"));
+// // Setup the app with body-parser and a static folder
+// app.use(
+//   bodyParser.urlencoded({
+//     extended: false
+//   })
+// );
+// app.use(express.static("public"));
+
+// // Database configuration
+// var databaseUrl = "activitylist";
+// var collections = ["activities"];
+
+// // Hook mongojs config to db variable
+// var db = mongojs(databaseUrl, collections);
+
+// // Log any mongojs errors to console
+// db.on("error", function(error) {
+//   console.log("Database Error:", error);
 // });
 
-// Simple index route
-app.get("/", function(req, res) {
-  res.send(index.html);
-});
+// // Routes
+// // ======
+// // app.get('/express_backend', (req, res) => {
+// //   res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' });
+// // });
 
-// Handle form submission, save submission to mongo
-app.post("/submit", function(req, res) {
-  console.log(req.body);
-  // Insert the note into the activities collection
-  db.activities.insert(req.body, function(error, saved) {
-    // Log any errors
-    if (error) {
-      console.log(error);
-    }
-    else {
-      // Otherwise, send the note back to the browser
-      // This will fire off the success function of the ajax request
-      res.send(saved);
-    }
-  });
-});
+// // Simple index route
+// app.get("/", function(req, res) {
+//   res.send(index.html);
+// });
 
-// Retrieve results from mongo
-app.get("/all", function(req, res) {
-  // Find all activities in the activities collection
-  db.activities.find({}, function(error, found) {
-    // Log any errors
-    if (error) {
-      console.log(error);
-    }
-    else {
-      // Otherwise, send json of the activities back to user
-      // This will fire off the success function of the ajax request
-      res.json(found);
-    }
-  });
-});
+// // Handle form submission, save submission to mongo
+// app.post("/submit", function(req, res) {
+//   console.log(req.body);
+//   // Insert the note into the activities collection
+//   db.activities.insert(req.body, function(error, saved) {
+//     // Log any errors
+//     if (error) {
+//       console.log(error);
+//     }
+//     else {
+//       // Otherwise, send the note back to the browser
+//       // This will fire off the success function of the ajax request
+//       res.send(saved);
+//     }
+//   });
+// });
 
-// Select just one note by an id
-app.get("/find/:id", function(req, res) {
-  // When searching by an id, the id needs to be passed in
-  // as (mongojs.ObjectId(IdYouWantToFind))
+// // Retrieve results from mongo
+// app.get("/all", function(req, res) {
+//   // Find all activities in the activities collection
+//   db.activities.find({}, function(error, found) {
+//     // Log any errors
+//     if (error) {
+//       console.log(error);
+//     }
+//     else {
+//       // Otherwise, send json of the activities back to user
+//       // This will fire off the success function of the ajax request
+//       res.json(found);
+//     }
+//   });
+// });
 
-  // Find just one result in the activities collection
-  db.activities.findOne(
-    {
-      // Using the id in the url
-      _id: mongojs.ObjectId(req.params.id)
-    },
-    function(error, found) {
-      // log any errors
-      if (error) {
-        console.log(error);
-        res.send(error);
-      }
-      else {
-        // Otherwise, send the note to the browser
-        // This will fire off the success function of the ajax request
-        console.log(found);
-        res.send(found);
-      }
-    }
-  );
-});
+// // Select just one note by an id
+// app.get("/find/:id", function(req, res) {
+//   // When searching by an id, the id needs to be passed in
+//   // as (mongojs.ObjectId(IdYouWantToFind))
 
-// Update just one note by an id
-app.post("/update/:id", function(req, res) {
-  // When searching by an id, the id needs to be passed in
-  // as (mongojs.ObjectId(IdYouWantToFind))
+//   // Find just one result in the activities collection
+//   db.activities.findOne(
+//     {
+//       // Using the id in the url
+//       _id: mongojs.ObjectId(req.params.id)
+//     },
+//     function(error, found) {
+//       // log any errors
+//       if (error) {
+//         console.log(error);
+//         res.send(error);
+//       }
+//       else {
+//         // Otherwise, send the note to the browser
+//         // This will fire off the success function of the ajax request
+//         console.log(found);
+//         res.send(found);
+//       }
+//     }
+//   );
+// });
 
-  // Update the note that matches the object id
-  db.activities.update(
-    {
-      _id: mongojs.ObjectId(req.params.id)
-    },
-    {
-      // Set the title, note and modified parameters
-      // sent in the req body.
-      $set: {
-        title: req.body.title,
-        note: req.body.note,
-        location: req.body.location,
-        price: req.body.price,
-        url: req.body.url,
-        modified: Date.now()
-      }
-    },
-    function(error, edited) {
-      // Log any errors from mongojs
-      if (error) {
-        console.log(error);
-        res.send(error);
-      }
-      else {
-        // Otherwise, send the mongojs response to the browser
-        // This will fire off the success function of the ajax request
-        console.log(edited);
-        res.send(edited);
-      }
-    }
-  );
-});
+// // Update just one note by an id
+// app.post("/update/:id", function(req, res) {
+//   // When searching by an id, the id needs to be passed in
+//   // as (mongojs.ObjectId(IdYouWantToFind))
 
-// Delete One from the DB
-app.get("/delete/:id", function(req, res) {
-  // Remove a note using the objectID
-  db.activities.remove(
-    {
-      _id: mongojs.ObjectID(req.params.id)
-    },
-    function(error, removed) {
-      // Log any errors from mongojs
-      if (error) {
-        console.log(error);
-        res.send(error);
-      }
-      else {
-        // Otherwise, send the mongojs response to the browser
-        // This will fire off the success function of the ajax request
-        console.log(removed);
-        res.send(removed);
-      }
-    }
-  );
-});
+//   // Update the note that matches the object id
+//   db.activities.update(
+//     {
+//       _id: mongojs.ObjectId(req.params.id)
+//     },
+//     {
+//       // Set the title, note and modified parameters
+//       // sent in the req body.
+//       $set: {
+//         title: req.body.title,
+//         note: req.body.note,
+//         location: req.body.location,
+//         price: req.body.price,
+//         url: req.body.url,
+//         modified: Date.now()
+//       }
+//     },
+//     function(error, edited) {
+//       // Log any errors from mongojs
+//       if (error) {
+//         console.log(error);
+//         res.send(error);
+//       }
+//       else {
+//         // Otherwise, send the mongojs response to the browser
+//         // This will fire off the success function of the ajax request
+//         console.log(edited);
+//         res.send(edited);
+//       }
+//     }
+//   );
+// });
 
-// Clear the DB
-app.get("/clearall", function(req, res) {
-  // Remove every note from the activities collection
-  db.activities.remove({}, function(error, response) {
-    // Log any errors to the console
-    if (error) {
-      console.log(error);
-      res.send(error);
-    }
-    else {
-      // Otherwise, send the mongojs response to the browser
-      // This will fire off the success function of the ajax request
-      console.log(response);
-      res.send(response);
-    }
-  });
-});
+// // Delete One from the DB
+// app.get("/delete/:id", function(req, res) {
+//   // Remove a note using the objectID
+//   db.activities.remove(
+//     {
+//       _id: mongojs.ObjectID(req.params.id)
+//     },
+//     function(error, removed) {
+//       // Log any errors from mongojs
+//       if (error) {
+//         console.log(error);
+//         res.send(error);
+//       }
+//       else {
+//         // Otherwise, send the mongojs response to the browser
+//         // This will fire off the success function of the ajax request
+//         console.log(removed);
+//         res.send(removed);
+//       }
+//     }
+//   );
+// });
 
-// Serve up static assets (usually on heroku)
-// if (process.env.NODE_ENV === "production") {
-//   app.use(express.static("client/build"));
-// }
+// // Clear the DB
+// app.get("/clearall", function(req, res) {
+//   // Remove every note from the activities collection
+//   db.activities.remove({}, function(error, response) {
+//     // Log any errors to the console
+//     if (error) {
+//       console.log(error);
+//       res.send(error);
+//     }
+//     else {
+//       // Otherwise, send the mongojs response to the browser
+//       // This will fire off the success function of the ajax request
+//       console.log(response);
+//       res.send(response);
+//     }
+//   });
+// });
 
-// Listen on port 3001
-app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
+// // Serve up static assets (usually on heroku)
+// // if (process.env.NODE_ENV === "production") {
+// //   app.use(express.static("client/build"));
+// // }
+
+// // Listen on port 3001
+// app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
