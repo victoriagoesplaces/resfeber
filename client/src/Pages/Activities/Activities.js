@@ -56,8 +56,6 @@ class Activities extends Component {
     };
 
 
-
-    //formjs code
     render() {
         return (
             <div>
@@ -65,12 +63,10 @@ class Activities extends Component {
                 <div className="row">
                     <div className="col s6" >
                         <Card className='extralarge'>
-                            {/* header={<CardTitle image='./images/worldMap.png'>Card Title</CardTitle>} */}
-                            {/* actions={[<a href='/Activities'>This is a Link</a>]}> */}
                             <Row>
                                 <h4 className="center">Add new activity</h4>
-                              
-                                <div>
+
+                                <form>
                                     <Input
                                         value={this.state.title}
                                         onChange={this.handleInputChange}
@@ -94,21 +90,8 @@ class Activities extends Component {
                                         disabled={!(this.state.location && this.state.title)}
                                         onClick={this.handleFormSubmit}
                                     > Submit Activity</Button>
-                                </div>
-                       
-                                {/* <div className="col s11 center" > */}
-                                {/* <Input placeholder="Placeholder" s={8} label="Activity Title" id="title" />
-                            <Input placeholder="Placeholder" s={8} label="Location" id="location" />
-                            <Input placeholder="Placeholder" s={8} label="Price" id="price" />
-                            <Input placeholder="Placeholder" s={8} label="URL" id="url"/>
-                            <Input placeholder="Placeholder" s={8}  type='textarea' label="Notes" id="note"/> */}
-                                {/* </div> */}
+                                </form>
 
-                                {/* <div className="col s1" >
-                            <Button className="center" id="make-new">Submit</Button>
-                            <br/>
-                            <Button id="clear-all">Clear All</Button>
-                        </div> */}
                             </Row>
                             I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
                         </Card>
@@ -116,28 +99,24 @@ class Activities extends Component {
                     <div className="col s6" >
                         <Card className='extralarge'>
                             <Row>
-                                {/* <h4 className="center">My activities </h4>
-                                <div id="results"></div> */}
-                                {/* header={<CardTitle image='./images/worldMap.png'>Card Title</CardTitle>} */}
-                                {/* actions={[<a href='/Activities'>This is a Link</a>]}> */}
-                            
+
                                 {this.state.activities.length ? (
-              <Row>
-                {this.state.activities.map(activity => (
-                  <div key={activity._id}>
-                    <div to={"/activities/" + activity._id}>
-                      <strong>
-                        {activity.title} in {activity.location}
-                      </strong>
-                    </div>
-                    <Button onClick={() => this.deleteActivity(activity._id)} />
-                  </div>
-                ))}
-              </Row>
-            ) : (
-              <h3>No Results to Display</h3>
-            )}
-                            
+                                    <Row>
+                                        {this.state.activities.map(activity => (
+                                            <div key={activity._id}>
+                                                <div to={"/activities/" + activity._id}>
+                                                    <strong>
+                                                        {activity.title} in {activity.location}
+                                                    </strong>
+                                                </div>
+                                                <Button onClick={() => this.deleteActivity(activity._id)} />
+                                            </div>
+                                        ))}
+                                    </Row>
+                                ) : (
+                                        <h3>No Results to Display</h3>
+                                    )}
+
                             </Row>
 
                         </Card>
