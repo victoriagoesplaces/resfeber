@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import API from "../../utils/API";
 
 import { Card } from 'react-materialize'
-// import {CardTitle} from 'react-materialize'
+import { Link } from "react-router-dom";
 import { Row } from 'react-materialize'
 import { Input } from 'react-materialize'
 import Navbar from "../../components/Navbar";
@@ -24,7 +24,7 @@ class Activities extends Component {
     loadActivities = () => {
         API.getActivities()
             .then(res =>
-                this.setState({ activities: res.data, title: "", location: "", notes: "" })
+                this.setState({ activities: res.data, title: "", location: "", price: "", URL:"", notes: "" })
             )
             .catch(err => console.log(err));
     };
@@ -48,6 +48,8 @@ class Activities extends Component {
             API.saveActivity({
                 title: this.state.title,
                 location: this.state.location,
+                price: this.state.price,
+                URL: this.state.URL,
                 notes: this.state.notes
             })
                 .then(res => this.loadActivities())
@@ -79,6 +81,18 @@ class Activities extends Component {
                                         name="location"
                                         placeholder="location (required)"
                                     />
+                                     <Input
+                                        value={this.state.price}
+                                        onChange={this.handleInputChange}
+                                        name="price"
+                                        placeholder="Price (Optional)"
+                                    />
+                                    <Input
+                                        value={this.state.URL}
+                                        onChange={this.handleInputChange}
+                                        name="URL"
+                                        placeholder="URL (Optional)"
+                                    />
                                     <Input
                                         value={this.state.notes}
                                         onChange={this.handleInputChange}
@@ -104,12 +118,12 @@ class Activities extends Component {
                                     <Row>
                                         {this.state.activities.map(activity => (
                                             <div key={activity._id}>
-                                                <div to={"/activities/" + activity._id}>
+                                                <Link to={"/activities/" + activity._id}>
                                                     <strong>
                                                         {activity.title} in {activity.location}
                                                     </strong>
-                                                </div>
-                                                <Button onClick={() => this.deleteActivity(activity._id)} />
+                                                </Link>
+                                                <Button onClick={() => this.deleteActivity(activity._id)} >X</Button>
                                             </div>
                                         ))}
                                     </Row>

@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import {Row} from 'react-materialize'
-
+import { Row } from 'react-materialize';
+import { Col } from 'react-materialize';
 import API from "../../utils/API";
+// import Link from "../../components/Button";
 
 class Detail extends Component {
   state = {
     activity: {}
   };
-  // When this component mounts, grab the activity with the _id of this.props.match.params.id
-  // e.g. localhost:3000/activities/599dcb67f0f16317844583fc
+
   componentDidMount() {
     API.getActivity(this.props.match.params.id)
       .then(res => this.setState({ activity: res.data }))
@@ -20,27 +20,32 @@ class Detail extends Component {
     return (
       <div>
         <Row>
-              <h1>
-                {this.state.activity.title} in {this.state.activity.location}
-              </h1>
-      
+          <Col s={12}>
+            <h4>
+              {this.state.activity.title} in {this.state.activity.location}
+            </h4>
+          </Col>
         </Row>
+
         <Row>
-         
+          <Col s={12}>
             <article>
-              <h1>notes</h1>
-              <p>
+              <h4>Notes</h4>
+              <ul>
+                {this.state.activity.URL}
+                {this.state.activity.price}
                 {this.state.activity.notes}
-              </p>
+              </ul>
             </article>
-       
+          </Col>
         </Row>
+
         <Row>
-          
-            <Link to="/">← Back to activities</Link>
-    
+          <Col s={12}>
+            <Link to="/activities">← Back to activities</Link>
+          </Col>
         </Row>
-     
+
       </div>
     );
   }

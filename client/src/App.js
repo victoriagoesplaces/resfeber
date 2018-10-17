@@ -6,9 +6,7 @@ import Activities from "./Pages/Activities";
 import Landing from "./Pages/Landing";
 import LogIn from "./Pages/LogIn";
 import SignUp from "./Pages/SignUp";
-
-// import Activities from "./pages/Activities";
-// import Detail from "./pages/Detail";
+import Detail from "./Pages/Detail";
 
 import PrivateRoute from "./components/PrivateRoute";
 import app from "./components/base";
@@ -45,12 +43,10 @@ class App extends Component {
         <div>
           <Route exact path="/" component={Landing} />
           <Route exact path="/about" component={About} />
-          {/* <Route exact path="/Activities" component={Activities} /> */}
           <Route exact path="/login" component={LogIn} />
           <Route exact path="/signup" component={SignUp} />
           {/* <Route component={Landing} /> */}
-          {/* <Route exact path="/activities" component={Activities} />
-          <Route exact path="/activities/:id" component={Detail} /> */}
+     
 
           <PrivateRoute
             exact
@@ -58,12 +54,12 @@ class App extends Component {
             component={Activities}
             authenticated={authenticated}
           />
-          {/* <PrivateRoute
+          <PrivateRoute
             exact
-            path="/activities:id"
+            path="/activities/:id"
             component={Detail}
             authenticated={authenticated}
-          /> */}
+          />
         </div>
       </Router>
 
