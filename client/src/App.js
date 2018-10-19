@@ -7,6 +7,7 @@ import Landing from "./Pages/Landing";
 import LogIn from "./Pages/LogIn";
 import SignUp from "./Pages/SignUp";
 import Detail from "./Pages/Detail";
+import LogOut from "./components/logout"
 
 import PrivateRoute from "./components/PrivateRoute";
 import app from "./components/base";
@@ -45,6 +46,7 @@ class App extends Component {
           <Route exact path="/about" component={About} />
           <Route exact path="/login" component={LogIn} />
           <Route exact path="/signup" component={SignUp} />
+          <Route exact path="/logout" component={LogOut} />
           {/* <Route component={Landing} /> */}
      
 

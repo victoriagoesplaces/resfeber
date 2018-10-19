@@ -4,8 +4,8 @@ const Schema = mongoose.Schema;
 const activitySchema = new Schema({
   title: { type: String, required: true },
   location: { type: String, required: true },
-  // price:  { type: number},
-  // URL:  { type: String},
+  price: Number,
+  URL:  String,
   notes: String,
   date: { type: Date, default: Date.now }
 });

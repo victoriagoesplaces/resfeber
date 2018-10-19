@@ -30,12 +30,10 @@ const LogIn = ({ onSubmit }) => {
                         </div>
                     </div>
                   
-                    {/* <button className="form-submit button btn">SIGN IN</button> */}
                     <div>
-                    <Button>Sign In</Button>
+                        <Button className="button">Sign In</Button>
                     </div>
                 </form>
-                {/* <a className="needAccount" href="/signup">Sign Up</a> */}
             </div>
         </div>
     );

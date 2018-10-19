@@ -9,9 +9,7 @@ function Navbar(props) {
 				{/* Change href information to go to main page of the website. */}
 				<a href="/" className="brand-logo">Resfeber</a>
 				<ul id="nav-mobile" className="right hide-on-med-and-down">
-					<li><a href="/dashboard">Dashboard</a></li>
-					{/* <li><a href="/">Itineraries</a></li> */}
-					{/* <li><a href="">Link</a></li> */}
+					<li><a href="/logout">Log Out</a></li>
 				</ul>
 				</div>
 			</nav>

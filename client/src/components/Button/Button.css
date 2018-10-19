@@ -1,3 +1,8 @@
 .btn{
     background-color: #487B9C;
+    color: #DEEAEA;
+}
+
+.btn:hover, .btn-large:hover, .btn-small:hover{
+    background-color: #487B9C;
 }
