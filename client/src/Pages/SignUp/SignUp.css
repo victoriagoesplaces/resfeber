@@ -1,0 +1,28 @@
+.container {
+    text-align: center;
+    padding-top: 18%;
+    color: #ffba60;
+    font-weight: bold;
+}
+ 
+
+.row, .col{
+    text-align: center;
+}
+
+.button{
+    background-color: #487B9C;
+    color: #DEEAEA;
+}
+
+
+.button:hover, .button-large:hover, .button-small:hover{
+    background-color: #487B9C;
+    color: #ffba60; 
+}
+
+/* .signupForm {
+    margin-left: 25%;
+} */
+
+   

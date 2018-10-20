@@ -17,7 +17,7 @@ const SignUp = ({ onSubmit }) => {
                         </div>
                     </div>
                     <div className="row">
-                        <div className="input-field col s12 l6">
+                        <div className="input-field col s12 l6 ">
                             <input
                                 className="validate"
                                 name="password"
@@ -27,11 +27,10 @@ const SignUp = ({ onSubmit }) => {
                         </div>
                     </div>
                     <div>
-                        {/* <button className="form-submit button">SIGN UP</button> */}
-                        <Button>Sign Up</Button>
+                         <Button>Sign Up</Button>
                     </div>
                 </form>
-                {/* <a className="existingAccount" href="/login">Already have an account? Login</a> */}
+                <a className="existingAccount" href="/login">Already have an account?</a>
             </div>
         </div>
     );
