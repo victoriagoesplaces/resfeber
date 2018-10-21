@@ -34,7 +34,7 @@ class Detail extends Component {
             <div class="detailCard card z-depth-0">
               <h4>Details</h4>
               <li>URL: <a href={this.state.activity.URL}>{this.state.activity.URL}</a></li>
-              <li>Price: {this.state.activity.price} </li>
+              <li>Price: ${this.state.activity.price} </li>
               <br/>
               <li>Notes: {this.state.activity.notes}</li>
               <Link className="linkActivity" to="/activities">← Back to activities</Link>
