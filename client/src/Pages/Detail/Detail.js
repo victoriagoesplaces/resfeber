@@ -2,11 +2,9 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Row } from 'react-materialize';
 import { Col } from 'react-materialize';
-import { Card } from 'react-materialize';
+import Footer from '../../components/Footer';
 import API from "../../utils/API";
 import './Detail.css';
-
-// import Link from "../../components/Button";
 
 class Detail extends Component {
   state = {
@@ -33,25 +31,18 @@ class Detail extends Component {
         <Row>
           <Col s={1}></Col>
           <Col s={10}>
-            <Card class="detailCard">
-              <h4>Notes</h4>
+            <div class="detailCard card z-depth-0">
+              <h4>Details</h4>
               <li>URL: <a href={this.state.activity.URL}>{this.state.activity.URL}</a></li>
               <li>Price: {this.state.activity.price} </li>
               <br/>
               <li>Notes: {this.state.activity.notes}</li>
-
               <Link className="linkActivity" to="/activities">← Back to activities</Link>
-            </Card>
+            </div>
           </Col>
           <Col s={1}></Col>
         </Row>
-
-        {/* <Row>
-          <Col s={12}>
-           
-          </Col>
-        </Row> */}
-
+        <Footer/>
       </div>
     );
   }

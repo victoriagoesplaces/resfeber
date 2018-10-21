@@ -7,6 +7,7 @@ import { Row } from 'react-materialize'
 import { Input } from 'react-materialize'
 import Navbar from "../../components/Navbar";
 import Button from "../../components/Button";
+import Footer from '../../components/Footer';
 
 
 class Activities extends Component {
@@ -132,10 +133,11 @@ class Activities extends Component {
                                     )}
 
                             </Row>
-
+                          
                         </Card>
                     </div>
                 </div>
+                <Footer/>
             </div>
         )
     }
