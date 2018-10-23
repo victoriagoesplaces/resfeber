@@ -25,7 +25,7 @@ class Activities extends Component {
     loadActivities = () => {
         API.getActivities()
             .then(res =>
-                this.setState({ activities: res.data, title: "", location: "", price: "", URL:"", notes: "" })
+                this.setState({ activities: res.data, title: "", location: "", price: "", URL: "", notes: "" })
             )
             .catch(err => console.log(err));
     };
@@ -65,41 +65,46 @@ class Activities extends Component {
                 <Navbar />
                 <div className="row">
                     <div className="col s6" >
-                        <Card className='extralarge'>
+                        <Card className='z-depth-0 card extralarge'>
                             <Row>
                                 <h4 className="center">Add new activity</h4>
 
                                 <form>
                                     <Input
+                                        className="inputForm"
                                         value={this.state.title}
                                         onChange={this.handleInputChange}
                                         name="title"
                                         placeholder="Title (required)"
                                     />
                                     <Input
+                                        className="inputForm"
                                         value={this.state.location}
                                         onChange={this.handleInputChange}
                                         name="location"
-                                        placeholder="location (required)"
+                                        placeholder="Location (required)"
                                     />
-                                     <Input
+                                    <Input
+                                        className="inputForm"
                                         value={this.state.price}
                                         onChange={this.handleInputChange}
                                         name="price"
                                         placeholder="Price (Optional)"
                                     />
                                     <Input
+                                        className="inputForm"
                                         value={this.state.URL}
                                         onChange={this.handleInputChange}
                                         name="URL"
                                         placeholder="URL (Optional)"
                                     />
                                     <Input
+                                        className="inputForm"
                                         value={this.state.notes}
                                         onChange={this.handleInputChange}
                                         type='textarea'
                                         name="notes"
-                                        placeholder="notes (Optional)"
+                                        placeholder="Notes (Optional)"
                                     />
                                     <Button
                                         disabled={!(this.state.location && this.state.title)}
@@ -112,32 +117,33 @@ class Activities extends Component {
                         </Card>
                     </div>
                     <div className="col s6" >
-                        <Card className='extralarge'>
+                        <Card className='z-depth-0 card extralarge'>
                             <Row>
-
                                 {this.state.activities.length ? (
                                     <Row>
                                         {this.state.activities.map(activity => (
                                             <div key={activity._id}>
                                                 <Link to={"/activities/" + activity._id}>
-                                                    <strong>
-                                                        {activity.title} in {activity.location}
-                                                    </strong>
+                                                    <li>
+                                                        <strong>
+                                                            {activity.title} in {activity.location}
+                                                            <Button onClick={() => this.deleteActivity(activity._id)} >X</Button>
+                                                        </strong>
+                                                    </li>
                                                 </Link>
-                                                <Button onClick={() => this.deleteActivity(activity._id)} >X</Button>
+                                                
+                                                
                                             </div>
                                         ))}
                                     </Row>
                                 ) : (
                                         <h3>No Results to Display</h3>
                                     )}
-
                             </Row>
-                          
                         </Card>
                     </div>
                 </div>
-                <Footer/>
+                <Footer />
             </div>
         )
     }

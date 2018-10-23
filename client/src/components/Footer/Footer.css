@@ -1,13 +1,13 @@
 /* flexbox to structure for sticky footer */
-body {
+/* body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
   }
 
-  main {
+main {
     flex: 1 0 auto;
-  }
+  } */
       
 .page-footer {
     background-color: #487B9C;
@@ -17,6 +17,6 @@ body {
     font-family: 'Prata', serif;
 }
 
-.page-footer{
+/* .page-footer{
 position: sticky;
-}
+} */
