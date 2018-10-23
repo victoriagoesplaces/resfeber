@@ -7,8 +7,8 @@
 
 main {
     flex: 1 0 auto;
-  } */
-      
+  }
+       */
 .page-footer {
     background-color: #487B9C;
 }
@@ -16,7 +16,7 @@ main {
     color: #ffba60;
     font-family: 'Prata', serif;
 }
-
-/* .page-footer{
+/* 
+.page-footer{
 position: sticky;
 } */
