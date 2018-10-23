@@ -16,8 +16,3 @@ body{
   background-size: cover;
   position: fixed;
 }
-
-.input-field>label {
-  color: #1E3656 ;
-  font-size: 1.4rem;
-}
