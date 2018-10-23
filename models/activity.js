@@ -6,6 +6,7 @@ const activitySchema = new Schema({
   location: { type: String, required: true },
   price: Number,
   URL:  String,
+  imageURL: String,
   notes: String,
   date: { type: Date, default: Date.now }
 });

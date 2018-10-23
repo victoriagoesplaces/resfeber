@@ -33,6 +33,7 @@ class Detail extends Component {
           <Col s={10}>
             <div class="detailCard card z-depth-0">
               <h4>Details</h4>
+              <ul><img className="activityImg" src={this.state.activity.imageURL} alt="activity"></img></ul>
               <li>URL: <a href={this.state.activity.URL}>{this.state.activity.URL}</a></li>
               <li>Price: ${this.state.activity.price} </li>
               <br/>

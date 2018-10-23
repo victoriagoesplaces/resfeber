@@ -16,6 +16,10 @@ main {
     color: #ffba60;
     font-family: 'Prata', serif;
 }
+
+.containerFooter {
+    justify-content: center;
+}
 /* 
 .page-footer{
 position: sticky;

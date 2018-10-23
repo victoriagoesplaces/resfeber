@@ -5,15 +5,15 @@ function Footer(props) {
     return (
         <div>
             <footer className="page-footer ">
-                <div className="container">
+                <div className="Footercontainer">
                     <div className="row">
                         <h5 className="center">Resfeber</h5>
                     </div>
                 </div>
                 <div className="footer-copyright">
-                    <div className="container">
+                    <div className="containerFooter">
                         © 2018 Resfeber Copyright
-                    <a className="grey-text text-lighten-4 right" href="https://github.com/victoriagoesplaces">GitHub</a>
+                    {/* <a className="grey-text text-lighten-4" href="https://github.com/victoriagoesplaces">GitHub</a> */}
                     </div>
                 </div>
             </footer>

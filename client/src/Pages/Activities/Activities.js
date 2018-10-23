@@ -8,7 +8,7 @@ import { Input } from 'react-materialize'
 import Navbar from "../../components/Navbar";
 import Button from "../../components/Button";
 import Footer from '../../components/Footer';
-
+import './Activities.css';
 
 class Activities extends Component {
     state = {
@@ -51,6 +51,7 @@ class Activities extends Component {
                 location: this.state.location,
                 price: this.state.price,
                 URL: this.state.URL,
+                imageURL: this.state.imageURL,
                 notes: this.state.notes
             })
                 .then(res => this.loadActivities())
@@ -89,14 +90,21 @@ class Activities extends Component {
                                         value={this.state.price}
                                         onChange={this.handleInputChange}
                                         name="price"
-                                        placeholder="Price (Optional)"
+                                        placeholder="Price (Recommended)"
                                     />
                                     <Input
                                         className="inputForm"
                                         value={this.state.URL}
                                         onChange={this.handleInputChange}
                                         name="URL"
-                                        placeholder="URL (Optional)"
+                                        placeholder="URL (Recommended)"
+                                    />
+                                    <Input
+                                        className="inputForm"
+                                        value={this.state.imageURL}
+                                        onChange={this.handleInputChange}
+                                        name="imageURL"
+                                        placeholder="Image URL (Recommended)"
                                     />
                                     <Input
                                         className="inputForm"
@@ -104,7 +112,7 @@ class Activities extends Component {
                                         onChange={this.handleInputChange}
                                         type='textarea'
                                         name="notes"
-                                        placeholder="Notes (Optional)"
+                                        placeholder="Notes (Recommended)"
                                     />
                                     <Button
                                         disabled={!(this.state.location && this.state.title)}
@@ -131,8 +139,8 @@ class Activities extends Component {
                                                         </strong>
                                                     </li>
                                                 </Link>
-                                                
-                                                
+
+
                                             </div>
                                         ))}
                                     </Row>
