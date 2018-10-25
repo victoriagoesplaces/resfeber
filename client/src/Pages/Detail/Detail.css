@@ -1,16 +1,15 @@
 .detailTitle {
     text-align: center;
     color: #ffba60;
-    font-weight: bold; 
-    font-size: 280%;
-    padding-top: 2%;
+    font-size: 250%;
+    padding-top: 4%;
     padding-bottom: 0;
 }
 
 .detailLocation{
     text-align: center;
     color: #487B9C;
-    font-size: 200%;
+    font-size: 150%;
 }
 h4 {
     text-align: center;
@@ -18,18 +17,21 @@ h4 {
 }
 
 .linkActivity {
-    text-align: left;
+    font-weight: bold;
+    color: #487B9C;
 }
 
-.card {
+.detailCard {
     background-color: rgba(222, 234, 234, 0.507);
 }
 
 
 .activityImg {
-    max-width: 350px;
-    max-height: 350px;
-    float: left;
+    max-width: 480px;
+    padding-top: 10%;
     padding-left: 10%;
+    padding-bottom: 10%;
+    padding-right: 10%;
+
 }
 

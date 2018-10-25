@@ -22,3 +22,7 @@ textarea.materialize-textarea {
   h6 {
     color: #487B9C;
   }
+
+  .card {
+    background-color: rgba(222, 234, 234, 0.507);
+  }

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Row } from 'react-materialize';
-import { Col } from 'react-materialize';
+// import { Row } from 'react-materialize';
+// import { Col } from 'react-materialize';
 import Footer from '../../components/Footer';
 import Navbar from "../../components/Navbar";
 // import Button from "../../components/Button";
@@ -23,23 +23,31 @@ class Detail extends Component {
     return (
       <div>
         <Navbar />
-        <Row>
-          <Col s={1}></Col>
-          <Col s={10}>
+        <div className="row">
+          <div className="col s2"> <Link className="linkActivity" to="/activities">← Back to activities</Link></div>
+          <div className="col s8">
             <div className="detailCard card z-depth-0">
-              <h4 className="detailTitle">{this.state.activity.title}</h4>
-              <h5 className="detailLocation">{this.state.activity.location}</h5>
-              <img className="activityImg" src={this.state.activity.imageURL} alt="activity"></img>
-              <li>URL: <a href={this.state.activity.URL}>{this.state.activity.URL}</a></li>
-              <li>Price: ${this.state.activity.price} </li>
-              <br />
-              <li>Notes: {this.state.activity.notes}</li>
+             
+              <div className="row">
+                <div className="col s6">
+                  <img className="activityImg" src={this.state.activity.imageURL} alt="activity"></img>
+                </div>
 
-              <Link className="linkActivity" to="/activities">← Back to activities</Link>
+                <div className="col s6">
+                  <h4 className="detailTitle">{this.state.activity.title}</h4>
+                  <h6 className="detailLocation">{this.state.activity.location}</h6>
+                  <ul>Price: ${this.state.activity.price} </ul>
+                  <div>URL: <a href={this.state.activity.URL}>{this.state.activity.URL}</a></div>
+                  <ul>Notes: {this.state.activity.notes}</ul>
+                </div>
+              </div>
+
+             
+
             </div>
-          </Col>
-          <Col s={1}></Col>
-        </Row>
+          </div>
+          <div className="col s2"></div>
+        </div>
         <Footer />
       </div>
     );
