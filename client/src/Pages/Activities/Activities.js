@@ -15,6 +15,9 @@ class Activities extends Component {
         activities: [],
         title: "",
         location: "",
+        price:"",
+        URL:"",
+        imageURL:"",
         notes: ""
     };
 
@@ -25,7 +28,7 @@ class Activities extends Component {
     loadActivities = () => {
         API.getActivities()
             .then(res =>
-                this.setState({ activities: res.data, title: "", location: "", price: "", URL: "", notes: "" })
+                this.setState({ activities: res.data, title: "", location: "", price: "", URL: "", imageURL: "", notes: "" })
             )
             .catch(err => console.log(err));
     };
@@ -36,10 +39,29 @@ class Activities extends Component {
             .catch(err => console.log(err));
     };
 
+    // updateActivity = state => {
+    //     API.update(state)
+    //     .then(res => this.loadActivities(
+    //         {"title": "this.state.title"},
+    //         {"location": "this.state.location"},
+    //         {"price": "this.state.price"},
+    //         {"URL": "this.state.URL"},
+    //         {"imageURL": "this.state.imageURL"},
+    //         {"notes": "this.state.notes"}, 
+    //     )
+    //     );
+    
+        // .catch(err => console.log(err));
+    //     {upsert:true})
+    // };
+    
+
+
     handleInputChange = event => {
         const { name, value } = event.target;
         this.setState({
             [name]: value
+
         });
     };
 
@@ -135,11 +157,12 @@ class Activities extends Component {
                                                     <li>
                                                         <strong>
                                                             {activity.title} in {activity.location}
-                                                            <Button onClick={() => this.deleteActivity(activity._id)} >X</Button>
+                                                          
                                                         </strong>
                                                     </li>
                                                 </Link>
-
+                                                <Button onClick={() => this.deleteActivity(activity._id)} >X</Button>
+                                                {/* <Button onClick={() => this.updateActivity(activity._id)} >Edit</Button> */}
 
                                             </div>
                                         ))}

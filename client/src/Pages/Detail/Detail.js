@@ -4,12 +4,13 @@ import { Row } from 'react-materialize';
 import { Col } from 'react-materialize';
 import Footer from '../../components/Footer';
 import Navbar from "../../components/Navbar";
+// import Button from "../../components/Button";
 import API from "../../utils/API";
 import './Detail.css';
 
 class Detail extends Component {
   state = {
-    activity: {}
+    activity: [],
   };
 
   componentDidMount() {
@@ -25,7 +26,7 @@ class Detail extends Component {
         <Row>
           <Col s={1}></Col>
           <Col s={10}>
-            <div class="detailCard card z-depth-0">
+            <div className="detailCard card z-depth-0">
               <h4 className="detailTitle">{this.state.activity.title}</h4>
               <h5 className="detailLocation">{this.state.activity.location}</h5>
               <ul><img className="activityImg" src={this.state.activity.imageURL} alt="activity"></img></ul>
@@ -33,6 +34,7 @@ class Detail extends Component {
               <li>Price: ${this.state.activity.price} </li>
               <br/>
               <li>Notes: {this.state.activity.notes}</li>
+            
               <Link className="linkActivity" to="/activities">← Back to activities</Link>
             </div>
           </Col>
