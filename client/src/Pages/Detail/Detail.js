@@ -22,25 +22,25 @@ class Detail extends Component {
   render() {
     return (
       <div>
-         <Navbar />
+        <Navbar />
         <Row>
           <Col s={1}></Col>
           <Col s={10}>
             <div className="detailCard card z-depth-0">
               <h4 className="detailTitle">{this.state.activity.title}</h4>
               <h5 className="detailLocation">{this.state.activity.location}</h5>
-              <ul><img className="activityImg" src={this.state.activity.imageURL} alt="activity"></img></ul>
+              <img className="activityImg" src={this.state.activity.imageURL} alt="activity"></img>
               <li>URL: <a href={this.state.activity.URL}>{this.state.activity.URL}</a></li>
               <li>Price: ${this.state.activity.price} </li>
-              <br/>
+              <br />
               <li>Notes: {this.state.activity.notes}</li>
-            
+
               <Link className="linkActivity" to="/activities">← Back to activities</Link>
             </div>
           </Col>
           <Col s={1}></Col>
         </Row>
-        <Footer/>
+        <Footer />
       </div>
     );
   }

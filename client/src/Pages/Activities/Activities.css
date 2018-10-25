@@ -1,0 +1,24 @@
+textarea.materialize-textarea {
+    border-bottom: 2px solid  #487B9C;
+  }
+  
+  textarea.materialize-textarea:focus + label {
+    color:  #ffba60 !important; 
+  }
+  
+  textarea.materialize-textarea:focus {
+    color: #ffba60 !important;
+  }
+  
+  textarea.materialize-textarea:not(.browser-default):focus:not([readonly]) {
+    border-bottom: 1px solid #ffba60;
+    box-shadow: 0 1px 0 0  #ffba60;
+  }
+
+  h3{
+    color: #ffba60;
+  }
+
+  h6 {
+    color: #487B9C;
+  }

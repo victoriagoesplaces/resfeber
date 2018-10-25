@@ -4,7 +4,6 @@ import API from "../../utils/API";
 import { Card } from 'react-materialize'
 import { Link } from "react-router-dom";
 import { Row } from 'react-materialize'
-import { Input } from 'react-materialize'
 import Navbar from "../../components/Navbar";
 import Button from "../../components/Button";
 import Footer from '../../components/Footer';
@@ -15,9 +14,9 @@ class Activities extends Component {
         activities: [],
         title: "",
         location: "",
-        price:"",
-        URL:"",
-        imageURL:"",
+        price: "",
+        URL: "",
+        imageURL: "",
         notes: ""
     };
 
@@ -50,11 +49,11 @@ class Activities extends Component {
     //         {"notes": "this.state.notes"}, 
     //     )
     //     );
-    
-        // .catch(err => console.log(err));
+
+    // .catch(err => console.log(err));
     //     {upsert:true})
     // };
-    
+
 
 
     handleInputChange = event => {
@@ -89,65 +88,94 @@ class Activities extends Component {
                 <div className="row">
                     <div className="col s6" >
                         <Card className='z-depth-0 card extralarge'>
-                            <Row>
-                                <h4 className="center">Add new activity</h4>
+                            <div>
+                             <h4 className="center">Plan your next adventure:<strong><h6>add new activity</h6></strong></h4>
 
                                 <form>
-                                    <Input
-                                        className="inputForm"
-                                        value={this.state.title}
-                                        onChange={this.handleInputChange}
-                                        name="title"
-                                        placeholder="Title (required)"
-                                    />
-                                    <Input
-                                        className="inputForm"
-                                        value={this.state.location}
-                                        onChange={this.handleInputChange}
-                                        name="location"
-                                        placeholder="Location (required)"
-                                    />
-                                    <Input
-                                        className="inputForm"
-                                        value={this.state.price}
-                                        onChange={this.handleInputChange}
-                                        name="price"
-                                        placeholder="Price (Recommended)"
-                                    />
-                                    <Input
-                                        className="inputForm"
-                                        value={this.state.URL}
-                                        onChange={this.handleInputChange}
-                                        name="URL"
-                                        placeholder="URL (Recommended)"
-                                    />
-                                    <Input
-                                        className="inputForm"
-                                        value={this.state.imageURL}
-                                        onChange={this.handleInputChange}
-                                        name="imageURL"
-                                        placeholder="Image URL (Recommended)"
-                                    />
-                                    <Input
-                                        className="inputForm"
-                                        value={this.state.notes}
-                                        onChange={this.handleInputChange}
-                                        type='textarea'
-                                        name="notes"
-                                        placeholder="Notes (Recommended)"
-                                    />
-                                    <Button
-                                        disabled={!(this.state.location && this.state.title)}
-                                        onClick={this.handleFormSubmit}
-                                    > Submit Activity</Button>
+                                    <div className="row">
+                                        <div className="col s12">
+                                            <input
+                                                className="inputForm"
+                                                value={this.state.title}
+                                                onChange={this.handleInputChange}
+                                                type='text'
+                                                name="title"
+                                                placeholder="Title (required)"
+                                            />
+                                        </div>
+
+                                    </div>
+
+                                    <div className="row">
+                                        <div className="col s6" >
+                                            <input
+                                                className="inputForm"
+                                                value={this.state.location}
+                                                onChange={this.handleInputChange}
+                                                type='text'
+                                                name="location"
+                                                placeholder="Location (required)"
+                                            />
+                                        </div>
+                                        <div className="col s6" >
+                                            <input
+                                                className="inputForm"
+                                                value={this.state.price}
+                                                onChange={this.handleInputChange}
+                                                type='text'
+                                                name="price"
+                                                placeholder="Price (Recommended)"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div className="row">
+                                        <div className="col s6" >
+                                            <input
+                                                className="inputForm"
+                                                value={this.state.URL}
+                                                onChange={this.handleInputChange}
+                                                type='text'
+                                                name="URL"
+                                                placeholder="URL (Recommended)"
+                                            />
+                                        </div>
+                                        <div className="col s6" >
+                                            <input
+                                                className="inputForm"
+                                                value={this.state.imageURL}
+                                                onChange={this.handleInputChange}
+                                                type='text'
+                                                name="imageURL"
+                                                placeholder="Image URL (Recommended)"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div className="row">
+                                        <textarea
+                                            className="inputForm materialize-textarea"
+                                            value={this.state.notes}
+                                            onChange={this.handleInputChange}
+                                            type='textarea'
+                                            name="notes"
+                                            placeholder="Notes (Recommended)"
+                                        ></textarea>
+                                    </div>
                                 </form>
 
-                            </Row>
-                            I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+                            </div>
+                            <Button
+                                disabled={!(this.state.location && this.state.title)}
+                                onClick={this.handleFormSubmit}
+                            > Submit Activity</Button>
+                        
                         </Card>
                     </div>
                     <div className="col s6" >
+                    
                         <Card className='z-depth-0 card extralarge'>
+                        <h4 className="center"> Ideas</h4>
                             <Row>
                                 {this.state.activities.length ? (
                                     <Row>
@@ -157,7 +185,7 @@ class Activities extends Component {
                                                     <li>
                                                         <strong>
                                                             {activity.title} in {activity.location}
-                                                          
+
                                                         </strong>
                                                     </li>
                                                 </Link>

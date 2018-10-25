@@ -22,8 +22,9 @@ h4 {
 }
 
 .card {
-    opacity: 0.75;
+    background-color: rgba(222, 234, 234, 0.507);
 }
+
 
 .activityImg {
     max-width: 350px;
