@@ -26,21 +26,25 @@ class Detail extends Component {
         <div className="row">
           <div className="col s2"> <Link className="linkActivity" to="/activities">← Back to activities</Link></div>
           <div className="col s8">
-            <div className="detailCard card z-depth-0">
+            <div className="detailCard card transparent z-depth-0">
              
               <div className="row">
-                <div className="col s6">
-                  <img className="activityImg" src={this.state.activity.imageURL} alt="activity"></img>
-                </div>
-
-                <div className="col s6">
+              <div className="col s6">
                   <h4 className="detailTitle">{this.state.activity.title}</h4>
                   <h6 className="detailLocation">{this.state.activity.location}</h6>
                   <ul>Price: ${this.state.activity.price} </ul>
-                  <div>URL: <a href={this.state.activity.URL}>{this.state.activity.URL}</a></div>
+
+                  <a href={this.state.activity.URL} target="__blank"> {this.state.activity.URL}</a>
+                  {/* <div>URL: <a href={this.state.activity.URL}> {this.state.activity.URL}</a></div> */}
                   <ul>Notes: {this.state.activity.notes}</ul>
                 </div>
-              </div>
+              
+
+                <div className="col s6">
+                  <img className="activityImg" src={this.state.activity.imageURL} alt="activity"></img>
+                </div>
+                </div>
+        
 
              
 

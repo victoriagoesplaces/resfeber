@@ -1,13 +1,18 @@
 .nav-wrapper {
-    background-color: #487B9C;
+    background-color:rgba(91, 70, 83, 0.068);
 }
 
 nav .brand-logo {
-    color: #ffba60;
+    color: #5B4653;
     font-family: 'Prata', serif;
     padding-left: 2%;
 }
 
 nav {
     margin-bottom: 2%;
+}
+
+av ul a {
+    color: #fffedf;
+    font-weight: bold;
 }

@@ -1,7 +1,7 @@
 .welcome {
     text-align: center;
     padding-top: 18%;
-    color: #ffba60;
+    color: #5B4653;
     font-weight: bold;
 }
 
@@ -10,14 +10,14 @@
 }
 
 .button{
-    background-color: #487B9C;
-    color: #DEEAEA;
+    background-color: #5B4653;
+    color: #FFFEDF;
 }
 
 
 .button:hover, .button-large:hover, .button-small:hover{
-    background-color: #487B9C;
-    color: #ffba60;
+    background-color:  #DAA688;
+    color: #5B4653;
 
 }
 

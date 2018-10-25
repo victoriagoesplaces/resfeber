@@ -4,16 +4,10 @@ import './Footer.css';
 function Footer(props) {
     return (
         <div>
-            <footer className="page-footer ">
-                <div className="Footercontainer">
-                    <div className="row">
-                        <h5 className="center">Resfeber</h5>
-                    </div>
-                </div>
+            <footer className="page-footer  z-depth-0">
                 <div className="footer-copyright">
-                    <div className="containerFooter">
-                        © 2018 Resfeber Copyright
-                    {/* <a className="grey-text text-lighten-4" href="https://github.com/victoriagoesplaces">GitHub</a> */}
+                    <div className="row">
+                        <h5 className="center footer"> © 2018 Resfeber Copyright</h5>
                     </div>
                 </div>
             </footer>

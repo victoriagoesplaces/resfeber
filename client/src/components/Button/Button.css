@@ -1,10 +1,10 @@
 .btn{
-    background-color: #487B9C;
-    color: #DEEAEA
+    background-color: #5B4653;
+    color: #FFFEDF
 }
 
 .btn:hover, .btn-large:hover, .btn-small:hover{
-    background-color: #487B9C;
-    color: #ffba60;
+    background-color:#5B4653;
+    color: #F9D289;
 }
 

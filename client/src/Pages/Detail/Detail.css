@@ -1,6 +1,6 @@
 .detailTitle {
     text-align: center;
-    color: #ffba60;
+    color: #5B4653;
     font-size: 250%;
     padding-top: 4%;
     padding-bottom: 0;
@@ -8,7 +8,7 @@
 
 .detailLocation{
     text-align: center;
-    color: #487B9C;
+    color: #5B4653;
     font-size: 150%;
 }
 h4 {
@@ -18,11 +18,11 @@ h4 {
 
 .linkActivity {
     font-weight: bold;
-    color: #487B9C;
+    color: #5B4653;
 }
 
 .detailCard {
-    background-color: rgba(222, 234, 234, 0.507);
+    background-color:rgba(91, 70, 83, 0.068)
 }
 
 

@@ -3,7 +3,8 @@ body{
 }
 
 .wallpaper {
-  background-image: url("./images/worldMap.png");
+  background-image: url("./images/background.jpeg");
+  opacity: 0.92;
 }
 
 .wallpaper {

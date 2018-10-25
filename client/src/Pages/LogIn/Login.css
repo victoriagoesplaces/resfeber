@@ -1,7 +1,7 @@
 .container {
     text-align: center;
     padding-top: 18%;
-    color: #ffba60;
+    color: #F9D289;
 }
  
 .row{
@@ -9,15 +9,15 @@
 }
 
 .button{
-    background-color: #487B9C;
-    color: #DEEAEA;
+    background-color: #5B4653;
+    color: #FFFEDF;
     float: right;
 }
 
 
 .button:hover, .button-large:hover, .button-small:hover{
-    background-color: #487B9C;
-    color: #ffba60; 
+    background-color: #DAA688;
+    color: #F9D289; 
 }
 
 /* Form section */
@@ -27,37 +27,37 @@
   }
   
   input[type=text]:not(.browser-default) {
-    border-bottom: 2px solid  #487B9C;
+    border-bottom: 2px solid  #5B4653;
   }
   
   input[type=text]:focus + label {
-    color:  #ffba60 !important; 
+    color:  #F9D289 !important; 
   }
   
   input[type=text]:focus {
-    color: #ffba60 !important;
+    color: #F9D289 !important;
   }
   
   input[type=text]:not(.browser-default):focus:not([readonly]) {
-    border-bottom: 1px solid #ffba60;
-    box-shadow: 0 1px 0 0  #ffba60;
+    border-bottom: 1px solid #F9D289;
+    box-shadow: 0 1px 0 0  #F9D289;
   }
 
   input[type=password]:not(.browser-default) {
-    border-bottom: 2px solid  #487B9C;
+    border-bottom: 2px solid  #5B4653;
   }
   
   input[type=password]:focus + label {
-    color:  #ffba60 !important; 
+    color:  #F9D289 !important; 
   }
   
   input[type=password]:focus {
-    color: #ffba60 !important;
+    color: #F9D289 !important;
   }
   
   input[type=password]:not(.browser-default):focus:not([readonly]) {
-    border-bottom: 1px solid #ffba60;
-    box-shadow: 0 1px 0 0  #ffba60;
+    border-bottom: 1px solid #F9D289;
+    box-shadow: 0 1px 0 0  #F9D289;
   }
 
  

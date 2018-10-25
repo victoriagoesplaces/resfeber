@@ -1,28 +1,37 @@
 textarea.materialize-textarea {
-    border-bottom: 2px solid  #487B9C;
+    border-bottom: 2px solid  #5B4653;
   }
   
   textarea.materialize-textarea:focus + label {
-    color:  #ffba60 !important; 
+    color:  #daa688 !important; 
   }
   
   textarea.materialize-textarea:focus {
-    color: #ffba60 !important;
+    color: #daa688 !important;
   }
   
   textarea.materialize-textarea:not(.browser-default):focus:not([readonly]) {
-    border-bottom: 1px solid #ffba60;
-    box-shadow: 0 1px 0 0  #ffba60;
+    border-bottom: 1px solid #daa688;
+    box-shadow: 0 1px 0 0  #daa688;
   }
 
   h3{
-    color: #ffba60;
+    color: #5B4653;
+  }
+
+  h4{
+    color: #5B4653;
   }
 
   h6 {
-    color: #487B9C;
+    color: #5B4653;
   }
 
   .card {
-    background-color: rgba(222, 234, 234, 0.507);
+    background-color:rgba(91, 70, 83, 0.178)
+  }
+
+  .nameLocation {
+    color: white;
+    background-color:rgba(91, 70, 83, 0.521)
   }
