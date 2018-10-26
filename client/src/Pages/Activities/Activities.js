@@ -219,7 +219,7 @@ class Activities extends Component {
                         </Card>
                     </div>
                 </div>
-                <Footer />
+                {/* <Footer /> */}
             </div>
         )
     }

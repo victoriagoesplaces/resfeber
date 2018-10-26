@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 // import { Row } from 'react-materialize';
 // import { Col } from 'react-materialize';
-import Footer from '../../components/Footer';
+// import Footer from '../../components/Footer';
 import Navbar from "../../components/Navbar";
 // import Button from "../../components/Button";
 import API from "../../utils/API";
@@ -52,7 +52,7 @@ class Detail extends Component {
           </div>
           <div className="col s2"></div>
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     );
   }

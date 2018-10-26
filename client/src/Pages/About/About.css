@@ -1,4 +1,9 @@
-/* img  {
-    height: 600px;
-    width: 600px;
+.carousel .carousel-item {
+    width: 350px;
+    height: 350px;
+}
+
+/* .carousel {
+    margin-top: 0%;
+
 } */
