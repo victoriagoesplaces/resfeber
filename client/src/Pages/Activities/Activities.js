@@ -181,7 +181,7 @@ class Activities extends Component {
                     </div>
                     <div className="col s6" >
 
-                        <Card className='z-depth-0 card extralarge'>
+                        <Card className='z-depth-0 card cardIdeas extralarge'>
                             <h4 className="center"> Ideas</h4>
                             <div className="row">
                                 {this.state.activities.length ? (

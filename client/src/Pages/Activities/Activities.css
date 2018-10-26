@@ -28,7 +28,12 @@ textarea.materialize-textarea {
   }
 
   .card {
-    background-color:rgba(91, 70, 83, 0.178)
+    background-color:rgba(91, 70, 83, 0.178);
+    height: 560px;
+  }
+
+  .cardIdeas {
+    overflow: scroll;
   }
 
   .nameLocation {
