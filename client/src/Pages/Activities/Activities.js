@@ -3,7 +3,7 @@ import API from "../../utils/API";
 
 import { Card } from 'react-materialize'
 import { Link } from "react-router-dom";
-import { Row } from 'react-materialize'
+// import { Row } from 'react-materialize'
 import Navbar from "../../components/Navbar";
 import Button from "../../components/Button";
 import Footer from '../../components/Footer';
@@ -17,7 +17,9 @@ class Activities extends Component {
         price: "",
         URL: "",
         imageURL: "",
-        notes: ""
+        notes: "",
+        id: "",
+        isHidden: true
     };
 
     componentDidMount() {
@@ -32,27 +34,31 @@ class Activities extends Component {
             .catch(err => console.log(err));
     };
 
+    getActivity = id => {
+        console.log(id)
+        API.getActivity(id)
+      .then(res => {
+          this.setState({ title: res.data.title, location: res.data.location, price: res.data.price, URL: res.data.URL, imageURL: res.data.imageURL, notes: res.data.notes, id: res.data._id, isHidden: !this.state.isHidden})
+          console.log(this.state)
+        })
+      .catch(err => console.log(err));
+    }
+
+
     deleteActivity = id => {
         API.deleteActivity(id)
             .then(res => this.loadActivities())
             .catch(err => console.log(err));
     };
 
-    // updateActivity = state => {
-    //     API.update(state)
-    //     .then(res => this.loadActivities(
-    //         {"title": "this.state.title"},
-    //         {"location": "this.state.location"},
-    //         {"price": "this.state.price"},
-    //         {"URL": "this.state.URL"},
-    //         {"imageURL": "this.state.imageURL"},
-    //         {"notes": "this.state.notes"}, 
-    //     )
-    //     );
-
-    // .catch(err => console.log(err));
-    //     {upsert:true})
-    // };
+    updateActivity = (id, activityChange) => {
+        API.updateActivity(id, this.state)
+            .then(res => {
+                this.loadActivities()
+                this.setState({isHidden: !this.state.isHidden})
+            })
+            .catch(err => console.log(err))
+    };
 
 
 
@@ -89,7 +95,7 @@ class Activities extends Component {
                     <div className="col s6" >
                         <Card className='z-depth-0 card extralarge'>
                             <div>
-                             <h4 className="center">Plan your next adventure:<strong><h6>add new activity</h6></strong></h4>
+                                <h4 className="center">Plan your next adventure:<strong><h6>add new activity</h6></strong></h4>
 
                                 <form>
                                     <div className="row">
@@ -169,41 +175,42 @@ class Activities extends Component {
                                 disabled={!(this.state.location && this.state.title)}
                                 onClick={this.handleFormSubmit}
                             > Submit Activity</Button>
-                        
+                            <div>{!this.state.isHidden && <Button onClick={() => this.updateActivity(this.state.id)}> Update Activity</Button> }</div>
+
                         </Card>
                     </div>
                     <div className="col s6" >
-                    
+
                         <Card className='z-depth-0 card extralarge'>
                             <h4 className="center"> Ideas</h4>
                             <div className="row">
                                 {this.state.activities.length ? (
-                             <div className="row">
-                                    <div className="col s2" ></div>
-                                    <div className="col s8" >
-                                        {this.state.activities.map(activity => (
-                                            <div key={activity._id}>
-                                                <div className="row">
-                                                    <div className="col s8">
-                                                        <Link to={"/activities/" + activity._id}>
-                                                            <li className="nameLocation">
-                                                                <strong>
-                                                                    {activity.title} in {activity.location}
-                                                                </strong>
-                                                            </li>
-                                                        </Link>
-                                                    </div>
-                                                    <div className="col s2">
-                                                        <Button onClick={() => this.updateActivity(activity._id)} >Edit</Button>
-                                                    </div>
-                                                    <div className="col s2">
-                                                        <Button className="erasebtn" onClick={() => this.deleteActivity(activity._id)} >X</Button>
+                                    <div className="row">
+                                        <div className="col s2" ></div>
+                                        <div className="col s8" >
+                                            {this.state.activities.map(activity => (
+                                                <div key={activity._id}>
+                                                    <div className="row">
+                                                        <div className="col s8">
+                                                            <Link to={"/activities/" + activity._id}>
+                                                                <li className="nameLocation">
+                                                                    <strong>
+                                                                        {activity.title} in {activity.location}
+                                                                    </strong>
+                                                                </li>
+                                                            </Link>
+                                                        </div>
+                                                        <div className="col s2">
+                                                            <Button onClick={() => this.getActivity(activity._id)} >Edit</Button>
+                                                        </div>
+                                                        <div className="col s2">
+                                                            <Button className="erasebtn" onClick={() => this.deleteActivity(activity._id)} >X</Button>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        ))}
-                                    </div>
-                                    <div className="col s2" ></div>
+                                            ))}
+                                        </div>
+                                        <div className="col s2" ></div>
                                     </div>
                                 ) : (
                                         <h3>No Results to Display</h3>
