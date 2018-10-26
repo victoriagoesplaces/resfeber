@@ -26,7 +26,7 @@ class Detail extends Component {
         <div className="row">
           <div className="col s2"> <Link className="linkActivity" to="/activities">← Back to activities</Link></div>
           <div className="col s8">
-            <div className="detailCard card transparent z-depth-0">
+            <div className="detailCard card z-depth-0">
              
               <div className="row">
               <div className="col s6">
