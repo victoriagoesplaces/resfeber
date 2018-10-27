@@ -1,9 +1,11 @@
 ### resfeber
 
-Travel planning app --About it
-* 
-* 
-* 
+Have you ever had that feeling of sudden adrenaline before a trip? or that excitement before traveling to a new destination?
+* It's the perfect planning app.
+* Resfeber helps users to organize and have fun while planning their next adventure.
+* Allows users to keep any activities in one location, with the ability to add links, images, and notes for any activities you are considering for your next destination.
+
+The name of this application is Swedish; The restless race of the traveler's heart before the journey begins. When anxiety and anticipation are tangled together.
 
 ### Getting Started
 The app can be found [Here](https://git.heroku.com/resfeber.git)
@@ -18,5 +20,8 @@ The app can be found [Here](https://git.heroku.com/resfeber.git)
 ### Author
 * Victoria Gonzalez - [VictoriaGoesPlaces](https://github.com/victoriagoesplaces)
 
-<!-- ### Screenshot
-![screenshot](./client/public/images/ "Screenshot of game") -->
+### Welcome Page Screenshot
+![screenshot](./client/public/images/welcome "Screenshot of Welcome Page")
+
+### Screenshot
+![screenshot](./client/public/images/activities "Screenshot of Activities Page")
