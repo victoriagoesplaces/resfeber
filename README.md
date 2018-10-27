@@ -1,8 +1,8 @@
 ### resfeber
 
 Have you ever had that feeling of sudden adrenaline before a trip? or that excitement before traveling to a new destination?
-* It's the perfect planning app.
-* Resfeber helps users to organize and have fun while planning their next adventure.
+* Resfeber is the perfect planning app.
+* It helps users to organize and have fun while planning their next adventure.
 * Allows users to keep any activities in one location, with the ability to add links, images, and notes for any activities you are considering for your next destination.
 
 The name of this application is Swedish; The restless race of the traveler's heart before the journey begins. When anxiety and anticipation are tangled together.
