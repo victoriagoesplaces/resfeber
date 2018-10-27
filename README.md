@@ -21,7 +21,7 @@ The app can be found [Here](https://git.heroku.com/resfeber.git)
 * Victoria Gonzalez - [VictoriaGoesPlaces](https://github.com/victoriagoesplaces)
 
 ### Welcome Page Screenshot
-![screenshot](./client/public/images/welcome "Screenshot of Welcome Page")
+![screenshot](./client/public/images/welcome.png "Screenshot of Welcome Page")
 
 ### Screenshot
-![screenshot](./client/public/images/activities "Screenshot of Activities Page")
+![screenshot](./client/public/images/activities.png "Screenshot of Activities Page")
