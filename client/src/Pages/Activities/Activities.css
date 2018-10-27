@@ -29,7 +29,7 @@ textarea.materialize-textarea {
 
   .card {
     background-color:rgba(91, 70, 83, 0.178);
-    height: 560px;
+    height: 565px;
   }
 
   .cardIdeas {
@@ -37,6 +37,6 @@ textarea.materialize-textarea {
   }
 
   .nameLocation {
-    color: white;
+    color: #FFFEDF;
     background-color:rgba(91, 70, 83, 0.521)
   }

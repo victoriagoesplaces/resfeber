@@ -1,9 +1,21 @@
-.carousel .carousel-item {
-    width: 350px;
-    height: 350px;
+.questions {
+    color: #5B4653;
 }
 
-/* .carousel {
-    margin-top: 0%;
+h2{
+    color: #F9D289;
+    text-decoration: underline;
+    margin: 0%;
+    margin-top: 1%;
+}
 
-} */
+.aboutbox {
+    padding-top: 14%;
+}
+
+.sectionTwo {
+    color: #FFFEDF;
+    background-color:rgba(91, 70, 83, 0.411);
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
